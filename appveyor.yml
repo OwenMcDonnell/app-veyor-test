@@ -1,0 +1,55 @@
+image: Visual Studio 2017
+
+#only build master branch
+branches:
+  only:
+    - master
+
+# only build tags
+skip_non_tags: true
+
+# fetch repository as zip archive
+shallow_clone: true
+
+# set node version
+environment:
+  nodejs_version: "8"
+
+# pre-clone scripts
+init:
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  # install latest node
+  - ps: Install-Product node $env:nodejs_version x64
+  # install newer npm
+  - npm install --global npm@5.7.1
+  - node -v
+  - npm -v
+  - npm set registry https://registry.npmjs.org/
+  - npm config set msvs_version 2015 --global
+  - npm install --global gulp node-gyp
+
+# run after repo is cloned
+install:
+  # install node modules
+  - ps: |
+      $env:PATH="C:\Program Files (x86)\MSBuild\14.0\Bin;$env:PATH"
+      appveyor-retry npm install
+
+# pre-build commands
+# before_build:
+#   - npm rebuild
+
+# custom build script
+build_script:
+  - ps: |
+      $env:PATH="C:\Program Files (x86)\MSBuild\14.0\Bin;$env:PATH"
+      npm run build
+
+# don't test automatically
+test: off
+
+# don't deploy automatically
+deploy: off
+
+on_finish:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
