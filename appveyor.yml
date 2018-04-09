@@ -17,7 +17,7 @@ environment:
 
 # pre-clone scripts
 init:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   # install latest node
   - ps: Install-Product node $env:nodejs_version x64
   # install newer npm
@@ -34,8 +34,8 @@ install:
   # install node modules
   - ps: |
       $env:PATH="C:\Program Files (x86)\MSBuild\14.0\Bin;$env:PATH"
-      #npm i ./win-bt-0.1.3.tgz 
-      npm install
+      npm i ./win-bt-0.1.3.tgz 
+      #npm install
       
 
 # pre-build commands
