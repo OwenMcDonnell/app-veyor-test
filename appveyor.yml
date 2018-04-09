@@ -19,15 +19,15 @@ environment:
 init:
   #- ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   # install latest node
-  - ps: Install-Product node $env:nodejs_version
+  - ps: Install-Product node $env:nodejs_version x64
   # install newer npm
   - npm install --global npm@5.7.1
   - node -v
   - npm -v
   - npm set registry https://registry.npmjs.org/
-  - npm config set msvs_version 2013 --global
+  - npm config set msvs_version 2015 --global
   - npm install --global gulp node-gyp
-  - npm install --global --production windows-build-tools
+  #- npm install --global --production windows-build-tools
 
 # run after repo is cloned
 install:
