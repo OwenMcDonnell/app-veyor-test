@@ -1,4 +1,4 @@
-image: Visual Studio 2017
+image: Visual Studio 2015
 
 #only build master branch
 branches:
@@ -19,7 +19,7 @@ environment:
 init:
   #- ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   # install latest node
-  - ps: Install-Product node $env:nodejs_version x64
+  - ps: Install-Product node $env:nodejs_version
   # install newer npm
   - npm install --global npm@5.7.1
   - node -v
