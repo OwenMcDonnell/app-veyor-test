@@ -26,9 +26,10 @@ init:
   - npm -v
   - npm set registry https://registry.npmjs.org/
   - npm config set msvs_version 2015 --global
+  - npm install --global --production windows-build-tools
   - npm install --global gulp node-gyp
   - node-gyp configure --verbose
-  #- npm install --global --production windows-build-tools
+  
 
 # run after repo is cloned
 install:
