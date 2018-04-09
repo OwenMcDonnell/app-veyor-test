@@ -6,7 +6,7 @@ branches:
     - master
 
 # only build tags
-skip_non_tags: true
+#skip_non_tags: true
 
 # fetch repository as zip archive
 shallow_clone: true
