@@ -18,7 +18,8 @@ environment:
 
 # pre-clone scripts
 init:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  - reg copy "HKLM\SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v10.0" "HKLM\SOFTWARE\Microsoft\Microsoft SDKs\Windows\v10.0" /s
   # install latest node
   - ps: Install-Product node $env:nodejs_version x64
   # install newer npm
