@@ -39,7 +39,7 @@ install:
   # install node modules
   - ps: |
       $env:PATH="C:\Program Files (x86)\MSBuild\14.0\Bin;$env:PATH"
-      npm install
+      #npm install
       
 
 # pre-build commands
@@ -50,10 +50,10 @@ install:
 build_script:
   - ps: |
       $env:PATH="C:\Program Files (x86)\MSBuild\14.0\Bin;$env:PATH"
-      npm run build
-#artifacts:
-  #- path: /artifacts
-    #name: registries
+      #npm run build
+artifacts:
+  - path: /artifacts
+    name: registries
 # don't test automatically
 test: off
 
