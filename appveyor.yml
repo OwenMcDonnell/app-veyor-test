@@ -38,9 +38,9 @@ init:
 # run after repo is cloned
 install:
   # install node modules
-  - ps: |
-      $env:PATH="C:\Program Files (x86)\MSBuild\14.0\Bin;$env:PATH"
-      npm install
+  #- ps: |
+      #$env:PATH="C:\Program Files (x86)\MSBuild\14.0\Bin;$env:PATH"
+      #npm install
       
 
 # pre-build commands
@@ -48,11 +48,13 @@ install:
 #   - npm rebuild
 
 # custom build script
-build_script:
-  - ps: |
-      $env:PATH="C:\Program Files (x86)\MSBuild\14.0\Bin;$env:PATH"
-      npm run build
-
+#build_script:
+  #- ps: |
+      #$env:PATH="C:\Program Files (x86)\MSBuild\14.0\Bin;$env:PATH"
+      #npm run build
+artifacts:
+  - path: /artifacts
+    name: registries
 # don't test automatically
 test: off
 
