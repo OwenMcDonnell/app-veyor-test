@@ -23,6 +23,7 @@ init:
   # install latest node
   - ps: Install-Product node $env:nodejs_version x64
   # install newer npm
+  
   - npm install --global npm@5.7.1
   - node -v
   - npm -v
@@ -32,6 +33,7 @@ init:
   #- npm install --global --production windows-build-tools
   - npm install --global gulp node-gyp
   #- node-gyp configure -- verbose --msvs_version=2015
+  - choco install regshot
   
 
 # run after repo is cloned
