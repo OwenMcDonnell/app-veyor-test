@@ -36,7 +36,15 @@ init:
   #- choco install regshot
   - ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.14393.0"
   - ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.Midi.GmDls\10.0.14393.0"
-
+  - ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Windows Kits\10\bin\10.0.14393.0"
+  - ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Windows Kits\10\Extension SDKs\WindowsDesktop\10.0.14393.0"
+  - ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Windows Kits\10\Extension SDKs\WindowsIoT\10.0.14393.0"
+  - ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Windows Kits\10\Extension SDKs\WindowsMobile\10.0.14393.0"
+  - ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Windows Kits\10\Licenses\10.0.14393.0"
+  - ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0"
+  - ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Windows Kits\10\Platforms\UAP\10.0.14393.0"
+  - ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Windows Kits\10\Source\10.0.14393.0"
+  
 # run after repo is cloned
 install:
   # install node modules
