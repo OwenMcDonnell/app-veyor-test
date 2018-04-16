@@ -33,7 +33,7 @@ init:
   #- npm install --global --production windows-build-tools
   - npm install --global gulp node-gyp
   #- node-gyp configure -- verbose --msvs_version=2015
-  - choco install revo.uninstaller --version 2.0.0
+  #- choco install revo.uninstaller --version 2.0.0
   #- choco install regshot
   #- ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.14393.0"
   #- ps: Remove-Item -Recurse -Force "C:\Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.Midi.GmDls\10.0.14393.0"
